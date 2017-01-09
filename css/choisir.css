@@ -1,0 +1,42 @@
+.polaroid { 
+  position: relative; 
+  text-align: center;
+} 
+  
+.polaroid img { 
+  max-width: 540px;
+  border: 10px solid #fff; 
+  border-bottom: 45px solid #fff; 
+  -webkit-box-shadow: 3px 3px 3px #777; 
+     -moz-box-shadow: 3px 3px 3px #777; 
+          box-shadow: 3px 3px 3px #777; 
+
+} 
+  
+.polaroid p { 
+  position: absolute; 
+  text-align: center; 
+  width: 100%; 
+  bottom: 0px; 
+  font: 400 28px/1 'Reenie Beanie', cursive; 
+}
+
+#titre {
+  max-width: 70%;
+  height: auto;
+}
+
+#boxtitre{
+  text-align: center;
+}
+
+#lotbox img{
+    width: auto; 
+    box-shadow: 8px 8px 10px #aaa;
+    height: 350px;
+}
+
+
+#lotbox{
+  text-align: center;
+}
