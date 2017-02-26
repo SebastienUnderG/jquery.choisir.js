@@ -20,6 +20,7 @@ LotteryLight :
 ==
 
 Une version réécrite du côté « lottery »  suivant https://github.com/JesonRondo/lottery
+
 La version d’origine permettait de faire apparaitre des images en remplaçant l’URL dans le SRC et faisait tourner TOUTES les images; ce qui est bien, mais pas très modulable.
 
 Ma version précharge toutes les images en amont et fait changer alternativement les propriétés CSS
