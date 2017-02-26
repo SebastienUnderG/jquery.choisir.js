@@ -5,22 +5,22 @@ Image Lottery
 
 jquery.choisir.js est une interface pour créer une lotterie graphique
 
-C’est à dire une page web qui permet de choisir aléatoirement dans une banque de donnée d’image prédéfini en SQL
+C’est-à-dire une page web qui permet de choisir aléatoirement dans une banque de donnée d’image prédéfini en SQL
 
 Sous la forme de 2 fichiers Javascript : 
 
 Choisir :
 ==
 
-Partie graphique et choisi aléatoirement l’image final 
+Partie graphique et choisi aléatoirement l’image finale 
 
 Utilise des modals via bootstrap et material 
 
 LotteryLight :
 ==
 
-Une version réécrite du cote « lottery »  suivant https://github.com/JesonRondo/lottery
-La version d’origine permettait de faire apparaitre des image en remplaçant l’URL dans le SRC et faisait tourner TOUTES les images; ce qui est bien mais pas très modulable.
+Une version réécrite du côté « lottery »  suivant https://github.com/JesonRondo/lottery
+La version d’origine permettait de faire apparaitre des images en remplaçant l’URL dans le SRC et faisait tourner TOUTES les images; ce qui est bien, mais pas très modulable.
 
 Ma version précharge toutes les images en amont et fait changer alternativement les propriétés CSS
 Cela a l’avantage d’être plus rapide ! 
@@ -42,10 +42,10 @@ Paramètres :
 
 + **Frap :** Nombre d’image apparaissant par seconde 
 + **Result :** l’image de fin 
-+ **linearTime :** le première temps d’apparitions des images en ms
-+ **slowTime :** le second temps d’apparition ralentie en ms 
++ **linearTime :** le premier temps d’apparitions des images en ms
++ **slowTime :** le second temps d’apparition ralenti en ms 
 
-*Le temps totale est l’addition des ces 2 périodes*
+*Le temps totale est l’addition de ces 2 périodes*
 + **clap :** son a chaque changement d’image 
 + **process_img :** json des URL des images 
 
