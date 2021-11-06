@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 
     function checkHash() {
-        if (document.location.hash != "") {
+        if (document.location.hash !== "") {
             the_base = document.location.hash.replace("#", "").toString();
         }
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
     function base(option) {
 
-        if (option == "SQL") {
+        if (option === "SQL") {
             $.get("php/base.php").done(function (data) {
                 list_base = $.parseJSON(data);
 
@@ -68,8 +68,10 @@ $(document).ready(function () {
 
             });
         } else {
+            console.log(option);
 
-            list_base = $.parseJSON(option);
+            list_base = JSON.parse(option);
+            // list_base = $.parseJSON(option);
             the_base = list_base.base[1].toString();
 
             checkHash();
@@ -78,8 +80,8 @@ $(document).ready(function () {
         }
 
 
-        for (var i = 0; i < list_base.base.length; i++) {
-            var the_li = '<li><a class="mode_change" href="#' + list_base.base[i].toString() + '">' + list_base.description[i].toString() + '</a></li>';
+        for (let i = 0; i < list_base.base.length; i++) {
+            let the_li = '<li><a class="mode_change" href="#' + list_base.base[i].toString() + '">' + list_base.description[i].toString() + '</a></li>';
             $('#followingmode').append(the_li);
             //$target_changemode.append(the_li);
         }
@@ -99,8 +101,8 @@ $(document).ready(function () {
 
         $.get("php/json.php", {base: the_base}).done(function (data) {
             data_json = $.parseJSON(data);
-            var longeur = (data_json['id'].length);
-            var nbAlea = Math.round(Math.random() * (longeur - 1));
+            const longeur = (data_json['id'].length);
+            const nbAlea = Math.round(Math.random() * (longeur - 1));
             $target_name.text(data_json['firstname'][nbAlea] + " " + data_json['lastname'][nbAlea]);
             $target_endphoto.attr('src', data_json['url'][nbAlea]);
             $.lotteryStart(nbAlea, function () {
@@ -127,12 +129,12 @@ $(document).ready(function () {
     function updateJSON() {
         $.get("php/json.php", {base: the_base}).done(function (data) {
 
-            //console.log(data);
+            console.log(data);
             data_json = $.parseJSON(data);
             arrayProcess_img['process_img'] = data_json['url'];
             $target_lottery.lotteryInit(arrayProcess_img);
         });
-    };
+    }
 
 
     function eject(the_base, the_id) {
