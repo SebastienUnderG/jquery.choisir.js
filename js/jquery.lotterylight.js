@@ -13,7 +13,7 @@
     let settings = {
         frap: 15,           // animate frap
         result: 0,          // lottery result            
-        linearTime: 2000,  // duration of linear annimation 
+        linearTime: 2000,  // duration of linear animation
         slowTime: 5000,
         clap: false,
         process_img: []     // process images, first one is default status
@@ -43,7 +43,7 @@
 
         } else {
             stepLocal++;
-            const baseid = "#img" + ((stepLocal % (step + 0)) + 0);
+            const baseid = "#img" + ((stepLocal % (step + 0)));
             previously = baseid.toString();
 
             $(previously).css("display", "inline");
@@ -58,7 +58,6 @@
     }
 
     let preLoad = function () {
-        //let img = new Image(0, 0);
         for (let key in settings.process_img) {
             //c'est ma modification
             let $img = $('<img>').attr('src', settings.process_img[key]);
@@ -100,11 +99,8 @@
 
         let validity = function () {
             // not in range
-            //if (typeof settings.result !== 'number' || settings.result < 0 || settings.result >= step) {
-            if (typeof settings.result !== 'number' || settings.result < 0) {
-                return false;
-            }
-            return true;
+            return !(typeof settings.result !== 'number' || settings.result < 0);
+
         };
 
 
@@ -127,7 +123,6 @@
         }
 
         function shutterSlow() {
-
             if (duration >= 0) {
                 duration = duration - speed;
                 //console.log(speed);
@@ -141,14 +136,13 @@
                 if (hasCallback) {
                     callback();
                     hasCallback = false;
-                    return;
                 }
             }
 
         }
 
 
-        let start = function () {
+        let start =  () => {
             // validity result;
             if (!validity()) {
                 return;
@@ -159,8 +153,7 @@
             speed = parseInt(1000 / settings.frap);
             //console.log(speed);
             shutterLinear();
-
-        }();
+        };
     }
 
 }(jQuery));
